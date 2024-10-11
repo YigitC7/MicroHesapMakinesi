@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Değişkenler
-PACKAGE_NAME="MicroHesapMakinesi"
+PACKAGE_NAME="microhesapmakinesi"
 PACKAGE_VERSION="1.0"
 PACKAGE_DIR="$PACKAGE_NAME-$PACKAGE_VERSION"
 
@@ -20,7 +20,7 @@ Priority: optional
 Architecture: amd64
 Depends: 
 Maintainer: Yigit <yigitcitak.1817@gmail.com>
-Description: Micro Hesap Makinesi programı
+Description: Micro hesap makinesi programı
 EOF
 
 # Masaüstü dosyasını oluştur (boş)
@@ -29,19 +29,17 @@ cat << EOF > "$PACKAGE_DIR/usr/local/share/applications/$PACKAGE_NAME.desktop"
 Version=1.0
 Type=Application
 Name=Micro Hesap Makinesi
-Exec=/usr/local/bin/microHesap/Main
-Icon=/usr/local/bin/microHesap/icon.png
+Exec=/usr/local/bin/micro_hesap_makinesi/Main
+Icon=/usr/local/bin/micro_hesap_makinesi/icon.png
 Terminal=false
 Categories=Utility;Application;
 EOF
 
-# Dosyaları yerleştirme
-cp -r dist/Main $PACKAGE_DIR/usr/local/bin/microHesap
-cp -f img/icon.png $PACKAGE_DIR/usr/local/bin/microHesap/icon.png
+cp -r dist/Main $PACKAGE_DIR/usr/local/bin/micro_hesap_makinesi
+cp -f img/icon.png $PACKAGE_DIR/usr/local/bin/micro_hesap_makinesi/icon.png
 
-# Deb yapmak
 dpkg-deb --build $PACKAGE_DIR
 
 echo "Dizin yapısı oluşturuldu: $PACKAGE_DIR"
-echo "Micropad deb paketi oluşturuldu"
+
 
