@@ -1,6 +1,6 @@
 import customtkinter as ctk
 
-version = (1.0,"kararlı sürüm")
+version = (1.1,"kararlı sürüm")
 
 def program():
 	def tus_bir_1F():
@@ -23,6 +23,8 @@ def program():
 		main_print_panel.insert("end","9")
 	def tus_sifir_0F():
 		main_print_panel.insert("end","0")
+	def tus_nokta_F():
+		main_print_panel.insert("end",".")
 
 	def tus_toplamaF():
 		main_print_panel.insert("end","+")
@@ -81,7 +83,7 @@ def program():
 		width=970,
 		fg_color=color_main_print_panel,
 		text_color="white",
-		font=("italic",tuslar_boyut * 2))
+		font=("italic",40 * 2))
 	main_print_panel.pack()
 	def disable_enter(event):
 		return "break"
@@ -191,12 +193,23 @@ def program():
 		window,
 		text="0",
 		height=tuslar_height,
-		width=tuslar_width * 2,
+		width=tuslar_width,
 		fg_color=color_tus2,
 		font=("italic",tuslar_boyut),
 		command=tus_sifir_0F
 		)
-	tus_sifir_0.place(x=tuslar_konum.x,y=tuslar_konum.y + 120 * 3)
+	tus_sifir_0.place(x=tuslar_konum.x+250,y=tuslar_konum.y + 120 * 3)
+
+	tus_nokta = ctk.CTkButton(
+		window,
+		text=".",
+		height=tuslar_height,
+		width=tuslar_width,
+		fg_color=color_tus2,
+		font=("italic",tuslar_boyut),
+		command=tus_nokta_F
+		)
+	tus_nokta.place(x=tuslar_konum.x,y=tuslar_konum.y + 120 * 3)
 
 
 	islem_konum = konum(x=800,y=200)

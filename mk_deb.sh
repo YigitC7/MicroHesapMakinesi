@@ -2,7 +2,7 @@
 
 # Değişkenler
 PACKAGE_NAME="microhesapmakinesi"
-PACKAGE_VERSION="1.0"
+PACKAGE_VERSION="1.1"
 PACKAGE_DIR="$PACKAGE_NAME-$PACKAGE_VERSION"
 
 # Paket dizinlerini oluştur
@@ -20,13 +20,13 @@ Priority: optional
 Architecture: amd64
 Depends: 
 Maintainer: Yigit <yigitcitak.1817@gmail.com>
-Description: Micro hesap makinesi programı
+Description: Micro hesap makinesi programı. Yiğit tarafından hazırlandı. Python dilinde customtkinter kütüphanesi ile yazıldı
 EOF
 
 # Masaüstü dosyasını oluştur (boş)
 cat << EOF > "$PACKAGE_DIR/usr/local/share/applications/$PACKAGE_NAME.desktop"
 [Desktop Entry]
-Version=1.0
+Version=1.1
 Type=Application
 Name=Micro Hesap Makinesi
 Exec=/usr/local/bin/micro_hesap_makinesi/Main
